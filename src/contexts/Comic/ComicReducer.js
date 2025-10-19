@@ -5,6 +5,11 @@ const ComicReducer = (globalState, action) => {
         ...globalState,
         comics: action.payload,
       };
+    case "OBTENER_COMIC":
+      return {
+        ...globalState,
+        currentComic: action.payload,
+      };
     default:
       return globalState;
   }

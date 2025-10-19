@@ -1,21 +1,47 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UserSatate from "./contexts/User/UserState";
+import ComicState from "./contexts/Comic/ComicState";
+import Register from "./components/Auth/Register";
+import Login from "./components/Auth/Login";
 import Layout from "./components/Layout";
 import Home from "./components/Home";
-import ComicState from "./contexts/Comic/ComicState";
+import ComicDetail from "./components/Comic/Single";
+import Profile from "./components/Profile/Index";
+import Checkout from "./components/Checkout";
+import SuccessPage from "./components/Success";
+import CancelPage from "./components/Cancel";
+import AuthRoute from "./routes/Auth";
+import PrivateRoute from "./routes/Private";
 
 const Router = () => {
   return (
-    <ComicState>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            {/* <Route path="/ver-personaje/:id" element={<CharacterDetail />} />
-          <Route path="/buscar" element={<Search />} /> */}
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </ComicState>
+    <UserSatate>
+      <ComicState>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/registro" element={<Register />} />
+              <Route
+                path="/iniciar-sesion"
+                element={<AuthRoute component={Login} />}
+              />
+              <Route
+                path="/perfil"
+                element={<PrivateRoute component={Profile} />}
+              />
+              <Route
+                path="/carrito"
+                element={<PrivateRoute component={Checkout} />}
+              />
+              <Route path="/comic/:id" element={<ComicDetail />} />
+              <Route path="/pago-exitoso" element={<SuccessPage />} />
+              <Route path="/pago-cancelado" element={<CancelPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </ComicState>
+    </UserSatate>
   );
 };
 
