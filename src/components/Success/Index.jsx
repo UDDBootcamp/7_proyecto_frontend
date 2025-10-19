@@ -1,13 +1,4 @@
-import { useEffect } from "react";
-import UserContext from "../../contexts/User/UserContext";
-
-
 const SuccessPage = () => {
-  const { clearCart } = UserContext();
-
-  useEffect(() => {
-    clearCart(); // Vacía el carrito al cargar la página
-  }, []);
 
   return (
     <>
