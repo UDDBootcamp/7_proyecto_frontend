@@ -4,6 +4,7 @@ import UserContext from "../../contexts/User/UserContext";
 
 export default function Profile() {
   const userCtx = useContext(UserContext);
+  const [savedMessage, setSavedMessage] = useState("");
 
   const { updateUser } = userCtx;
 
@@ -50,7 +51,14 @@ export default function Profile() {
   const sendData = async (event) => {
     event.preventDefault();
 
-    await updateUser(userForm);
+    try {
+      await updateUser(userForm);
+      setSavedMessage("Cambios guardados correctamente.");
+      setTimeout(() => setSavedMessage(""), 3000);
+    } catch (error) {
+      setSavedMessage("Error al guardar los cambios.");
+      setTimeout(() => setSavedMessage(""), 3000);
+    }
   };
 
   return (
@@ -60,6 +68,12 @@ export default function Profile() {
           <section className="container pt-5 text-center">
             <h2 className="text-secondary">TU PERFIL</h2>
           </section>
+          {savedMessage && (
+            <div className="alert alert-success text-center mx-5" role="alert">
+              {savedMessage}
+            </div>
+          )}
+
           <section className="container py-5">
             <form
               onSubmit={(e) => {

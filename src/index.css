@@ -10,6 +10,11 @@ body {
     color: #C13128 !important;
 }
 
+.btn {
+    border-radius: 20px;
+    width: 150px;
+}
+
 .btn-primary{
     background-color: #1c1c1c;
     border: #1c1c1c;
@@ -45,9 +50,21 @@ body {
     border: #1862d1;
 }
 
-.btn {
-    border-radius: 20px;
-    width: 150px;
+.btn-close {
+  width: 25px;
+  height: 25px;
+  background-color: #C13128;
+  border: none;
+  font-size: .9rem;
+  color: #dc3545;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn-close:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  color: #a71d2a;
 }
 
 .card{

@@ -10,6 +10,7 @@ const ComicSingle = () => {
   const { comic } = location?.state;
   const { authState, cart, editCart, getCart } = useContext(UserContext);
   const { setCurrentComic } = useContext(ComicContext);
+  const [savedMessage, setSavedMessage] = useState("");
 
   useEffect(() => {
     if (!comic) {
@@ -19,7 +20,6 @@ const ComicSingle = () => {
     setCurrentComic(comic);
     getCart();
   }, []);
-  console.log("🧩 Comic recibido:", comic);
 
   const handleChange = (e) => {
     setQuantity(Number(e.target.value));
@@ -36,6 +36,14 @@ const ComicSingle = () => {
       price: comic.price,
       img: comic.img,
     };
+
+    try {
+      setSavedMessage("Comic agregado al carro.");
+      setTimeout(() => setSavedMessage(""), 3000);
+    } catch (error) {
+      setSavedMessage("Error agregar al carro.");
+      setTimeout(() => setSavedMessage(""), 3000);
+    }
 
     const existingItemIndex = cart.findIndex(
       (el) => el.priceID === item.priceID
@@ -72,7 +80,18 @@ const ComicSingle = () => {
             <p className="pt-3">{description}</p>
             <div className="mt-auto p-2 d-flex justify-content-between align-items-center">
               <div className="d-flex flex-column">
-                {isnew && <div className="bookmark">NUEVO</div>}
+                <div className="d-flex">
+                  {isnew && <div className="bookmark">NUEVO</div>}
+
+                  {savedMessage && (
+                    <div
+                      className="alert alert-success text-center mx-5 mb-0"
+                      role="alert"
+                    >
+                      {savedMessage}
+                    </div>
+                  )}
+                </div>
                 <div className="text-danger fs-1 fw-bold">
                   {formatCLP(price)}
                 </div>
