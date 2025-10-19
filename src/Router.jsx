@@ -4,12 +4,12 @@ import ComicState from "./contexts/Comic/ComicState";
 import Register from "./components/Auth/Register";
 import Login from "./components/Auth/Login";
 import Layout from "./components/Layout/Index";
-import Home from "./components/Home";
-import ComicDetail from "./components/Comic/Single";
+import Home from "./components/Home/Index";
+import ComicDetail from "./components/Comic/Single/Index";
 import Profile from "./components/Profile/Index";
-import Checkout from "./components/Checkout";
-import SuccessPage from "./components/Success";
-import CancelPage from "./components/Cancel";
+import Checkout from "./components/Checkout/index";
+import SuccessPage from "./components/Success/index";
+import CancelPage from "./components/Cancel/Index";
 import AuthRoute from "./routes/Auth";
 import PrivateRoute from "./routes/Private";
 
