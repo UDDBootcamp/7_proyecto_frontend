@@ -3,7 +3,7 @@ import UserSatate from "./contexts/User/UserState";
 import ComicState from "./contexts/Comic/ComicState";
 import Register from "./components/Auth/Register";
 import Login from "./components/Auth/Login";
-import Layout from "./components/Layout";
+import Layout from "./components/Layout/Index";
 import Home from "./components/Home";
 import ComicDetail from "./components/Comic/Single";
 import Profile from "./components/Profile/Index";
