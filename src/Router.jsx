@@ -8,8 +8,8 @@ import Home from "./components/Home/Index";
 import ComicSingle from "./components/Comic/Single/Index";
 import Profile from "./components/Profile/Index";
 import Checkout from "./components/Checkout/Index";
-import SuccessPage from "./components/Success/temp";
-import CancelPage from "./components/Cancel/temp";
+import SuccessPage from "./components/Success/Index";
+import CancelPage from "./components/Cancel/Index";
 import AuthRoute from "./routes/Auth";
 import PrivateRoute from "./routes/Private";
 
