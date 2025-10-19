@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Index = () => {
+const CancelPage = () => {
   return (
     <div>Pago cancelado</div>
   )
 }
 
-export default Index
+export default CancelPage

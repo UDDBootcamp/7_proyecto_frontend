@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import UserContext from "../../contexts/User/UserContext";
 import { formatCLP } from "../../utils/formatCLP";
 
-export default function index() {
+export default function Checkout() {
   const userCtx = useContext(UserContext);
 
   const { cart, sessionURL, getCheckoutSession, editCart } = userCtx;

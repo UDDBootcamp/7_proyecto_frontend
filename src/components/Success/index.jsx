@@ -1,6 +1,6 @@
 import React from "react";
 
-const Index = () => {
+const SuccessPage = () => {
   return (
     <div className="container">
       <h1>Pago Exitoso</h1>
@@ -9,4 +9,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default SuccessPage;

@@ -5,7 +5,7 @@ import Register from "./components/Auth/Register";
 import Login from "./components/Auth/Login";
 import Layout from "./components/Layout/Index";
 import Home from "./components/Home/Index";
-import ComicDetail from "./components/Comic/Single/Index";
+import ComicSingle from "./components/Comic/Single/Index";
 import Profile from "./components/Profile/Index";
 import Checkout from "./components/Checkout/Index";
 import SuccessPage from "./components/Success/index";
@@ -34,7 +34,7 @@ const Router = () => {
                 path="/carrito"
                 element={<PrivateRoute component={Checkout} />}
               />
-              <Route path="/comic/:id" element={<ComicDetail />} />
+              <Route path="/comic/:id" element={<ComicSingle />} />
               <Route path="/pago-exitoso" element={<SuccessPage />} />
               <Route path="/pago-cancelado" element={<CancelPage />} />
             </Route>
