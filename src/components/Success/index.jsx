@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
 const index = () => {
   return (
-    <div>Pago Exitoso</div>
-  )
-}
+    <div className="container">
+      <h1>Pago Exitoso</h1>
+      <p>Su pago fue procesado correctamente.</p>
+    </div>
+  );
+};
 
-export default index
+export default index;
