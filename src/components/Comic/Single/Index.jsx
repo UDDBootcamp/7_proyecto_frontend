@@ -35,6 +35,7 @@ const ComicSingle = () => {
       quantity,
       price: comic.price,
       img: comic.img,
+      qty: comic.qty,
     };
 
     try {
@@ -52,7 +53,9 @@ const ComicSingle = () => {
     let updatedCart;
     if (existingItemIndex !== -1) {
       updatedCart = cart.map((el, i) =>
-        i === existingItemIndex ? { ...el, quantity: item.quantity } : el
+        i === existingItemIndex
+          ? { ...el, quantity: item.quantity, qty: item.qty }
+          : el
       );
     } else {
       updatedCart = [...cart, item];

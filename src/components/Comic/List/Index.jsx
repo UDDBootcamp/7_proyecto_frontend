@@ -18,7 +18,10 @@ const ComicList = () => {
             <p className="badge p-2 bg-secondary">No hay cómics disponibles.</p>
           ) : (
             comics.map((comic) => (
-              <div className="col-lg-4 col-md-6 col-12 p-3" key={comic._id}>
+              <div
+                className="col-lg-4 col-md-6 col-12 px-3 py-5"
+                key={comic._id}
+              >
                 <div className="card">
                   <div className="img">
                     {comic.isnew && <div className="bookmark">NUEVO</div>}

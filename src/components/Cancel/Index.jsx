@@ -5,7 +5,7 @@ const CancelPage = () => {
     <>
       <div className="container-fluid py-5 text-center">
         <div className="container">
-          <h1>El Pago Fue cancelado</h1>
+          <h1>El Pago fue cancelado</h1>
           <p className="py-5">Intente nuevamente.</p>
 
           <Link to="/carrito" className="btn btn-primary">

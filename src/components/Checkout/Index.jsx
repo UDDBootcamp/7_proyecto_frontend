@@ -73,7 +73,6 @@ export default function Checkout() {
     <>
       <div className="container p-5">
         <h1 className="mb-5">Carrito</h1>
-
         {savedMessage && (
           <div className="alert alert-success text-center mx-5" role="alert">
             {savedMessage}
@@ -97,8 +96,8 @@ export default function Checkout() {
                         <h3 className="text-sm">{e.name}</h3>
                       </div>
 
-                      <p className="d-flex justify-content-end align-items-center">
-                        Cantidad:{" "}
+                      <div className="d-flex justify-content-end align-items-center">
+                        <span>Cantidad: </span>
                         <div className="form-floating ps-3">
                           <select
                             className="form-select py-0"
@@ -110,7 +109,7 @@ export default function Checkout() {
                               handleChange(e);
                             }}
                           >
-                            {Array(5)
+                            {Array(e.qty)
                               .fill(null)
                               .map((_, i) => {
                                 const initial = i + 1;
@@ -130,7 +129,7 @@ export default function Checkout() {
                         <span className="fs-5 fw-bold ps-5">
                           {formatCLP(e.price)}
                         </span>
-                      </p>
+                      </div>
 
                       <p className="fs-4 fw-bold text-end">
                         {formatCLP(e.price * e.quantity)}
