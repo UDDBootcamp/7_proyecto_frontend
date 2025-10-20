@@ -1,16 +1,30 @@
-# React + Vite
+# 7 Proyecto Fullstack: Tienda de Cómics de Batman
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación web fullstack. Permite visualizar cómics, agregar productos al carrito y realizar pagos a través de Stripe.
 
-Currently, two official plugins are available:
+## 🧩 Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend:** React, React Router, Context API
+- **Backend:** Node.js, Express, MongoDB, Mongoose
+- **Despliegue:** Render (frontend y backend)
+- **Pasarela de pago:** Stripe
 
-## React Compiler
+## Estructura de la aplicación
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+La app cuenta con las siguientes vistas principales:
 
-## Expanding the ESLint configuration
+- `/` → Galería de cómics
+- `/comic/:id` → Detalle del cómic
+- `/carrito` → Carrito de compra (requiere sesión)
+- `/pago-exitoso` y `/pago-cancelado` → Resultado del pago
+- `/registro` y `/iniciar-sesion` → Autenticación de usuario
+- `/perfil` → Actualización de la información del usuario
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Diagrama de flujo
+
+![Diagrama de flujo](./src/assets/diagrama.jpg)
+
+Este diagrama representa el flujo de navegación y decisiones de la aplicación, incluyendo el proceso de compra y validación de sesión.
+
+❤️ Este proyecto fue desarrollado por **Marco Rubio Bustos**.

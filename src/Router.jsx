@@ -35,8 +35,15 @@ const Router = () => {
                 element={<PrivateRoute component={Checkout} />}
               />
               <Route path="/comic/:id" element={<ComicSingle />} />
-              <Route path="/pago-exitoso" element={<SuccessPage />} />
-              <Route path="/pago-cancelado" element={<CancelPage />} />
+
+              <Route
+                path="/pago-exitoso"
+                element={<PrivateRoute component={SuccessPage} />}
+              />
+              <Route
+                path="/pago-cancelado"
+                element={<PrivateRoute component={CancelPage} />}
+              />
             </Route>
           </Routes>
         </BrowserRouter>
